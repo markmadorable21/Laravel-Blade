@@ -1,0 +1,29 @@
+install xampp
+
+install composer
+
+set up system variables (add System Variable "PHP" name and "C:\xampp\php\php.exe" and "Composer" name with value "C:\ProgramData\ComposerSetup\bin")
+
+check composer version in cmd with "composer --version" should show composer version and PHP version
+
+download laravel by entering into terminal prompt "composer global require laravel/installer"
+
+uncomment extension=fileinfo, extension=zip, extension=mysqli
+comment extension=openssl in xampp/bin/ini.php
+
+create new laravel project by entering laravel new firstwebsite
+
+open project folder
+
+change APP_URL in .env file to "http://localhost/dashboard/firstwebsite/public"
+
+visit route and change home route
+
+running "npm install vite --save-dev" in terminal to start vite
+
+# While coding (see changes live)
+npm run dev
+
+# When ready to test like real users will see it
+npm run build    # Make optimized version
+npm run preview  # Test that optimized version
