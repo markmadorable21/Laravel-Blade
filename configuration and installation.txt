@@ -27,3 +27,6 @@ npm run dev
 # When ready to test like real users will see it
 npm run build    # Make optimized version
 npm run preview  # Test that optimized version
+
+controller:
+php artisan make:model Post -mcr
