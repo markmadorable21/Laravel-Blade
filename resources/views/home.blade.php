@@ -7,8 +7,5 @@
 </head>
 <body>
   <h1>Home</h1>
-  #;uncomment extension=fileinfo, extension=zip, extension=mysqli
-#; comment extension=openssl 
-# in xampp/bin/ini.php
 </body>
 </html>
