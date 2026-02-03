@@ -9,15 +9,16 @@
 </head>
 <body>
   <header>
-    <!-- header tag -->
-    @yield('header') 
-  </header>
+    <!-- header tag --> 
+     <img src="{{ asset('images/search_icon.png') }}" alt="" style="height:45px">
+    @yield('header')
+  </header>  
   <main>
     <!-- main content tag -->
     @yield('maincontent') 
 </main>
 
-<footer>
+<footer>  
   <!-- footer tag -->
     @yield('footer') 
 </footer>

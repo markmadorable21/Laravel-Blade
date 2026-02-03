@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+// home page or initial page
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 // Parameters using routes
 // Route::get('/portfolio/{firstname}', function ($firstname, $lastname) {
 //     return $firstname . " " . $lastname;

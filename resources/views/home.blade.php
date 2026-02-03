@@ -10,12 +10,14 @@
     @extends('layouts.default')
 
     @section('header')
-    <h2>This is the header</h2>
+    <h2>This is the header</h2> 
+
+    @include('sidemenu')
     @endsection
 
     @section('maincontent')
-        <!-- @csrf = Cross-Site Request Forgery (CSRF) -->
-        
+        <!-- @csrf = Cross-Site Request Forgery (CSRF) --> 
+         
         <h1>Home</h1>
 
         <a href="{{ route('testpage') }}">Go to test page!</a>
