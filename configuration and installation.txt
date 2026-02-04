@@ -85,3 +85,27 @@ delete()
 Docker configuration
 1. sudo apt update && sudo apt upgrade -y
 2. sudo apt install php8.3-cli php8.3-common php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-curl php8.3-mysql php8.3-zip php8.3-readline php8.3-gd php8.3-pgsql unzip curl git composer -y
+
+docker --version
+
+docker pull hello-world
+
+if error
+docker login -u markmadorable
+copy the password from docker web provided
+
+else
+sudo usermod -aG docker $USER (to not type sudo for sudo docker pull hello-world)
+
+1. creating project in ubuntu
+    composer create-project laravel/laravel firstwebsite
+    cd firstwebsite 
+    cd ../ (to go back)
+
+    composer require laravel/sail --dev
+
+    php artisan sail:install
+
+    (select db)
+
+    
