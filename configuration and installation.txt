@@ -28,5 +28,36 @@ npm run dev
 npm run build    # Make optimized version
 npm run preview  # Test that optimized version
 
-controller:
+migrate controller resources:
 php artisan make:model Post -mcr
+
+other codes:
+# Model + Migration only
+php artisan make:model Post -m
+
+# Model + Migration + Controller (non-resource)
+php artisan make:model Post -mc
+
+# Model + Migration + Factory + Seeder + Controller
+php artisan make:model Post -mfscr
+
+# All common components (common shortcut)
+php artisan make:model Post -a
+# Equivalent to: -mfsrc (migration, factory, seeder, resource controller)
+
+run migrations:
+php artisan migrate
+
+undo:
+php artisan migrate:rollback
+
+undo specific migrated file:
+php artisan migrate:rollback --path=database/migrations/2026_02_03_075146_create_posts_table.php
+
+migrate specific file
+php artisan migrate --path=database/migrations/2026_02_03_075146_create_posts_table.php
+
+migrate all files, rerun all of them:
+php artisan migrate:refresh
+
+protected $fillable = ['title', 'body'];
