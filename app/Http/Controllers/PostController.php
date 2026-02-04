@@ -10,17 +10,27 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    // Model methods:
+    // all()
+    // find()
+    // create()
+    // update()
+    // delete()
     public function index()
-    {
-        //
-    } 
+    { 
+        $posts = Post::all();
+        // Post is the Model that extends Models class with built-in all() method that grabs all data entries in the database
+        return view('posts.index', compact('posts'));
+    }  
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('posts.create');
+
     }
 
     /**
@@ -28,7 +38,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        Post::create($validated);
+        return redirect()->route('posts.index')->with('success','Post created successfully!');
     }
 
     /**
@@ -42,24 +58,36 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $post = Post::findOrFail($id); //find the post
+        $post->update($validated); // update the post with new data
+        
+        return redirect()->route('posts.index')->with('success','Post updated successfully!');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage. 
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id); //find the post
+        $post->delete();
+
+        return redirect()->route('posts.index')->with('success','Post deleted successfully!');
     }
 }

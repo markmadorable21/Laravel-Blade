@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 // home page or initial page
 Route::get('/', function () {
     return view('home');
 });
+
+Route::resource('posts', PostController::class);
 
 // home page or initial page
 Route::get('/contact', function () {

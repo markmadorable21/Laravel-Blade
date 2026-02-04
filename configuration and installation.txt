@@ -61,3 +61,23 @@ migrate all files, rerun all of them:
 php artisan migrate:refresh
 
 protected $fillable = ['title', 'body'];
+
+this line in web.php will create resource feature route that will create a whole bunch of routes to acces methods in PostController.php
+or all methods in PostController class will be use as resource for Posts
+Route::resource('posts', PostController::class);
+
+this will return posts folder with file named index.blade.php
+ public function index()
+    {
+        $posts = Post::all(); // this will grab all data inside the db and assign to variable array $posts
+        Post is the Post model
+        all::() is a static method
+        return view('posts.index', compact('posts'));
+    } 
+
+Model methods:
+all()
+find()
+create()
+update()
+delete()
