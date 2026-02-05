@@ -108,4 +108,39 @@ sudo usermod -aG docker $USER (to not type sudo for sudo docker pull hello-world
 
     (select db)
 
+    code . (to open code editor)
+
+2. In VS code
+    change DB_DATABASE to firstwebsite
+
+3. In Ubuntu terminal
+    ./vendor/bin/sail down
+    ./vendor/bin/sail up -d
+    ./vendor/bin/sail artisan migrate
+
+4. go to www.dbeaver.io/ to check database
+    click database
+    Select Mysql or any db u prefer
+    Input configuration based on db details inside .env file
+    test connection
+    to avoid connection issues, right click firstwebsite db then click Edit Connection, go to Driver Properties and set allowPublicKeyRetrieval to true
+
+5. to view website
+    ./vendor/bin/sail up -d (should be ran, this is the server)
+    ./vendor/bin/sail down (to close the server)
+
+6. to close server
+    ./vendor/bin/sail down (to close the server)
+    close dbeaver
+    close docker in the hidden icons in the taskbar
+
+6. opening your laptop first thing to do
+    open ubuntu
+    open docker
+    in ubuntu terminal:
+        cd LaravelProjects/firstwebsite
+        code .
+        ./vendor/bin/sail up -d
+        open website 
     
+
